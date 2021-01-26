@@ -2,17 +2,16 @@ section	.text
 	global	ft_strcpy
 
 ft_strcpy:
-	xor		rcx, rcx
-	jmp		cpy
+	xor		ecx, ecx
 
-cpy:
-	mov		rdx, [rsi + rcx]
-	mov		[rdi + rcx], rdx
-	cmp		byte rdx, 0
-	je		exit
+.cpy:
+	movzx	rdx, byte [rsi + rcx]
+	mov		[rdi + rcx], dl
+	test	dl, dl
+	je		.exit
 	inc		rcx
-	jmp		cpy
+	jmp		.cpy
 
-exit:
+.exit:
 	mov		rax, rdi
 	ret

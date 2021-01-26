@@ -6,7 +6,7 @@
 #    By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 22:59:36 by agiraude          #+#    #+#              #
-#    Updated: 2021/01/25 18:06:23 by agiraude         ###   ########.fr        #
+#    Updated: 2021/01/26 18:09:28 by agiraude         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,16 @@ NAME		=	libasm.a
 SRCS_FILES	=	ft_strlen.s \
 				ft_strcpy.s \
 				ft_write.s \
-				ft_strcmp.s
+				ft_read.s \
+				ft_strdup.s \
+				ft_strcmp.s \
+				bonus/ft_list_create_elem.s \
+				bonus/ft_list_push_front.s \
+				bonus/ft_list_size.s \
+				bonus/ft_atoi.s \
+				bonus/ft_isspace.s \
+				bonus/ft_getindex.s \
+				bonus/ft_checkbase.s
 
 SRCS_DIR	=	srcs/
 
@@ -25,7 +34,7 @@ OBJS		=	$(SRCS:.s=.o)
 
 NASM		=	nasm
 
-ASM_FLAGS	=	-f elf64
+ASM_FLAGS	=	-f elf64 -gdwarf
 
 %.o:			%.s
 				$(NASM) $(ASM_FLAGS) $< -o $(<:.s=.o)
@@ -38,12 +47,18 @@ all:			$(NAME)
 clean:
 				rm -f $(OBJS)
 
-flcean:			clean
+fclean:			clean
 				rm -f $(NAME)
 
-re:				flcean all
+re:				fclean all
 
 test:			all
 				clang -Wall -Wextra -g main.c -I includes -L . -lasm -o test
+
+bonus:			all
+				clang -Wall -Wextra -g bonus_main.c -I includes -L . -lasm -o test_bonus
+
+list:			all
+				clang -Wall -Wextra -g list.c -I includes -L . -lasm -o list_test
 
 .PHONY:			all clean fclean re
