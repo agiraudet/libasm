@@ -9,16 +9,13 @@ ft_atoi:
 	push	rdi
 	mov		rdi, rsi			;set strlen param
 	call	ft_strlen
-	cmp		rax, 1
-	jle		.base_error
-	mov		rdi, rsi
-	push	rsi
-	call	ft_checkbase
-	cmp		rax, 0
-	je		.base_error
-	pop		rsi
-	pop		rdi
 	mov		rbx, rax			;store base_len in rbx
+	cmp		rbx, 1
+	jle		.base_error
+	call	ft_checkbase
+	test	rax, rax
+	je		.base_error
+	pop		rdi
 	mov		rcx, rdi			;store str_to_decrypt in rcx
 	xor		eax, eax			;same as mov rax, 0
 
@@ -80,5 +77,6 @@ ft_atoi:
 	jmp		.sign
 
 .base_error:
+	pop		rdi
 	xor		eax, eax
 	ret
