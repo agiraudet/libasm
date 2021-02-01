@@ -6,7 +6,7 @@
 #    By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 22:59:36 by agiraude          #+#    #+#              #
-#    Updated: 2021/01/26 18:09:28 by agiraude         ###   ########.fr        #
+#    Updated: 2021/02/01 12:02:49 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,10 @@ SRCS_FILES	=	ft_strlen.s \
 				ft_strdup.s \
 				ft_strcmp.s \
 				bonus/ft_list_create_elem.s \
+				bonus/ft_list_swap.s \
 				bonus/ft_list_push_front.s \
 				bonus/ft_list_size.s \
+				bonus/ft_list_sort.s \
 				bonus/ft_atoi.s \
 				bonus/ft_isspace.s \
 				bonus/ft_getindex.s \
