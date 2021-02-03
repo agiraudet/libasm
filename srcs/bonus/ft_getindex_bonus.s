@@ -9,7 +9,6 @@ ft_getindex:
 	cmp		byte[rsi + rcx], 0
 	je		.exit
 	cmp		dil, byte[rsi + rcx]
-	;cmove	rax, rcx
 	je		.exit_ok
 	inc		rcx
 	jmp		.count

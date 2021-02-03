@@ -53,7 +53,7 @@ ft_list_remove_if:
 	pop		rcx
 	pop		rbx
 	test	rbx, rbx
-	je		.exit
+	je		.exit_last
 	mov		rdi, rbx
 	mov		rbx, [rdi + 8]
 	mov		[rcx + 8], rdi
@@ -65,4 +65,9 @@ ft_list_remove_if:
 	jmp		.delone
 
 .exit:
+	ret
+
+.exit_last:
+	xor	r8d, r8d
+	mov	[rcx + 8], r8
 	ret

@@ -6,7 +6,7 @@
 #    By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 22:59:36 by agiraude          #+#    #+#              #
-#    Updated: 2021/02/03 12:28:17 by user42           ###   ########.fr        #
+#    Updated: 2021/02/03 13:36:58 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,5 +61,8 @@ test:			all
 
 bonus:			all
 				clang -Wall -Wextra bonus_main.c -I includes -L . -lasm -o test_bonus
+
+list:			all
+				clang -Wall -Wextra list.c -I includes -L . -lasm -o list_test
 
 .PHONY:			all clean fclean re

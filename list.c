@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 23:26:20 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/03 10:32:14 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/03 13:44:14 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "libtest.h"
+#include "libasm.h"
 
 void	print_lst(t_list *lst)
 {
@@ -49,11 +49,6 @@ int	main(void)
 	print_lst(ls);
 	printf("---------------\n\n");
 
-	printf("---swap---\n");
-	ft_list_swap(&l1);
-	print_lst(ls);
-	printf("---------------\n\n");
-
 	printf("---push front(x3)---\n");
 	ft_list_push_front(&ls, ft_strdup("A"));
 	ft_list_push_front(&ls, ft_strdup("F"));
@@ -71,9 +66,9 @@ int	main(void)
 	printf("---------------\n\n");
 
 	printf("---remove if (== E)---\n");
-	ft_list_remove_if(&ls, "A", &ft_strcmp, &free); 
+	ft_list_remove_if(&ls, "F", &ft_strcmp, &free); 
 	print_lst(ls);
-	printf("---------------\n\n");
+	printf("---------------\n");
 
 	return (0);
 }
