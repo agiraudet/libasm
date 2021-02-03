@@ -60,6 +60,7 @@ ft_list_remove_if:
 	jmp		.current
 
 .delfirst:
+	mov		rcx, [r12]
 	mov		[r12], rbx
 	jmp		.delone
 

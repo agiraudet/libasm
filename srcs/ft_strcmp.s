@@ -3,7 +3,7 @@ section	.text
 
 ft_strcmp:
 	movzx	ecx, byte[rsi]
-	movzx	rax, byte[rdi]
+	movzx	eax, byte[rdi]
 	test	cl, cl
 	je		.exit
 	cmp		cl, al
@@ -13,5 +13,5 @@ ft_strcmp:
 	jmp		ft_strcmp
 
 .exit:
-	sub		al, cl
+	sub		eax, ecx
 	ret

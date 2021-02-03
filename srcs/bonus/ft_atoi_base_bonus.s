@@ -1,11 +1,11 @@
 section	.text
-	global	ft_atoi
+	global	ft_atoi_base
 	extern	ft_getindex
 	extern	ft_strlen
 	extern	ft_isspace
 	extern	ft_checkbase
 
-ft_atoi:
+ft_atoi_base:
 	push	rdi
 	mov		rdi, rsi			;set strlen param
 	call	ft_strlen
