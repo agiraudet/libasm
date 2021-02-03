@@ -3,21 +3,22 @@ section	.text
 	extern	print_lst
 
 ft_list_sort:
-	mov		r12, rdi
-	mov		r14, rdi
-	mov		r13, rsi
-	mov		rdi, [rdi]
+	mov		r12, rdi		;original pointer
+	xor		r14d, r14d
+	mov		r13, rsi		;&ft_cmp
+	mov		rdi, [rdi]		;current elem
 
 .loop:
-	call	.debug
+;	call	.debug
 	mov		rsi, [rdi + 8]
 	test	rsi, rsi
 	je		.exit
 	call	.cmpr
-	cmp		rax, 0
+	cmp		al, 0
 	jg		.swap
-	mov		r12, rdi
+	mov		r14, rdi
 	mov		rdi, rsi
+	jmp		.loop
 
 .cmpr:
 	push	rsi
@@ -31,23 +32,25 @@ ft_list_sort:
 	ret
 
 .swap:
-	xor		ecx, ecx
 	xor		edx, edx
-	push	rsi
-	push	rdi
+
+	mov		rdx, [rsi + 8]	;2nd in rdx
+	mov		[rsi + 8], rdi	;prev->next = 2nd elem
+	mov		[rdi + 8], rdx	;1st->next = next elem
+
+	test	r14, r14
+	jne		.setprev
+	je		.setpoint
+
+.setprev:
+	mov		[r14 + 8], rsi
 	mov		rdi, [r12]
+	xor		r14d, r14d
+	jmp		.loop
 
-	mov		rsi, [rdi + 8]
-	mov		rdx, [rsi + 8]
-	mov		rcx, [rdx + 8]
-	mov		[rdi + 8], rdx
-	mov		[rsi + 8], rcx
-	mov		[rdx + 8], rsi
-
-	pop		rdi
-	pop		rsi
-	mov		rdi, [r14]
-	mov		r12, r14
+.setpoint:
+	mov		[r12], rsi
+	mov		rdi, rsi
 	jmp		.loop
 
 .exit:

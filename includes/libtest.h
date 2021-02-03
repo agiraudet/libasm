@@ -6,7 +6,7 @@
 /*   By: agiraude <agiraude@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/19 23:27:11 by agiraude          #+#    #+#             */
-/*   Updated: 2021/02/01 12:05:33 by user42           ###   ########.fr       */
+/*   Updated: 2021/02/02 18:28:56 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ void	ft_list_push_front(t_list **list, void *data);
 int		ft_list_size(t_list *list);
 void	ft_list_swap(t_list *l);
 void	ft_list_sort(t_list **begin_list, int (*cmp)());
+void	ft_list_remove_if(t_list **begin_list, void *data_ref, int (*cmp)(), void (*free_fct)(void*));
+void	ft_list_delone(t_list *elem, void (*free_fct)(void*));
 
 #endif
