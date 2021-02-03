@@ -1,8 +1,0 @@
---- EXPECTED RESULT ---
-string = 111
-base = 01
-return = 0
---- ACTUAL RESULT ---
-string = 111
-base = 01
-return = 13

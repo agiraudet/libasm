@@ -1,4 +1,0 @@
-tomato
-ZEBRA
-apple
-bread

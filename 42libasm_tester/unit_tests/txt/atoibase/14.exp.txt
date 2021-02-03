@@ -1,3 +1,0 @@
-string = 155
-base = 01234506789
-return = 0

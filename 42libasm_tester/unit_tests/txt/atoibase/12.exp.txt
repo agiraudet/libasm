@@ -1,3 +1,0 @@
-string = 568
-base = 012345	6789
-return = 0

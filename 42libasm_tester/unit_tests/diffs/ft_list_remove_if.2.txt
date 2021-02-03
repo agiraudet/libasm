@@ -1,4 +1,0 @@
---- EXPECTED RESULT ---
---- ACTUAL RESULT ---
-
-Àrt

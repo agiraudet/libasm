@@ -1,3 +1,0 @@
-string = abc56
-base = 0123456789
-return = 0

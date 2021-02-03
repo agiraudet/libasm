@@ -1,3 +1,0 @@
-string = 	---ff
-base = 0123456789abcdef
-return = -255

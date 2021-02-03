@@ -1,6 +1,5 @@
 section	.text
 	global	ft_list_sort
-	extern	print_lst
 
 ft_list_sort:
 	mov		r12, rdi		;original pointer
@@ -9,7 +8,6 @@ ft_list_sort:
 	mov		rdi, [rdi]		;current elem
 
 .loop:
-;	call	.debug
 	mov		rsi, [rdi + 8]
 	test	rsi, rsi
 	je		.exit
@@ -54,11 +52,4 @@ ft_list_sort:
 	jmp		.loop
 
 .exit:
-	ret
-
-.debug:
-	push	rdi
-	mov		rdi, [r14]
-	call	print_lst
-	pop		rdi
 	ret
