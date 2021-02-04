@@ -6,7 +6,7 @@
 /*   By: user42 <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/03 11:42:21 by user42            #+#    #+#             */
-/*   Updated: 2021/02/03 17:51:59 by agiraude         ###   ########.fr       */
+/*   Updated: 2021/02/04 11:02:20 by agiraude         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBASM_H
 
 # include <errno.h>
+# include <sys/types.h>
 
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
